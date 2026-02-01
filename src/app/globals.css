@@ -3,53 +3,59 @@
 :root {
   /* Fortune 500 Legal Palette */
   --background: #ffffff;
-  --foreground: #0f172a; /* Slate 900 */
-  
-  --primary: #0f172a; /* Navy Blue */
+  --foreground: #0f172a;
+  /* Slate 900 */
+
+  --primary: #0f172a;
+  /* Navy Blue */
   --primary-foreground: #f8fafc;
-  
-  --secondary: #d4af37; /* Metallic Gold */
+
+  --secondary: #d4af37;
+  /* Metallic Gold */
   --secondary-foreground: #0f172a;
-  
-  --accent: #f1f5f9; /* Slate 100 */
+
+  --accent: #f1f5f9;
+  /* Slate 100 */
   --accent-foreground: #0f172a;
-  
+
   --muted: #f8fafc;
   --muted-foreground: #64748b;
-  
+
   --card: #ffffff;
   --card-foreground: #0f172a;
-  
+
   --border: #e2e8f0;
   --input: #e2e8f0;
   --ring: #0f172a;
-  
+
   --radius: 0.5rem;
-  
+
   /* Animation variables */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #020617; /* Deep Navy/Black */
+    --background: #020617;
+    /* Deep Navy/Black */
     --foreground: #f8fafc;
-    
+
     --primary: #f8fafc;
     --primary-foreground: #020617;
-    
-    --secondary: #d4af37; /* Gold remains constant */
+
+    --secondary: #d4af37;
+    /* Gold remains constant */
     --secondary-foreground: #020617;
-    
+
     --accent: #1e293b;
     --accent-foreground: #f8fafc;
-    
+
     --muted: #0f172a;
     --muted-foreground: #94a3b8;
-    
+
     --card: #020617;
     --card-foreground: #f8fafc;
-    
+
     --border: #1e293b;
     --input: #1e293b;
     --ring: #d4af37;
@@ -75,10 +81,10 @@
   --radius-sm: calc(var(--radius) - 2px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
-  
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  
+
   --animate-in: fade-in 0.5s var(--ease-out-expo);
   --animate-up: slide-up 0.7s var(--ease-out-expo);
 }
@@ -87,7 +93,8 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
-  antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Custom Utilities for that 'Speechless' interaction */
@@ -101,4 +108,3 @@ body {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
