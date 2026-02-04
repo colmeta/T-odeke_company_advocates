@@ -1,0 +1,538 @@
+/* ============================================
+   T ODEKE & CO. ADVOCATES - DESIGN SYSTEM
+   World-Class Foundation for Excellence
+   ============================================ */
+
+/* ============================================
+   CSS RESET & FOUNDATION
+   ============================================ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* ============================================
+   DESIGN TOKENS - THE SECRET SAUCE
+   ============================================ */
+
+:root {
+  /* PREMIUM COLOR PALETTE - Designed to Impress */
+  
+  /* Primary Colors - Authority & Trust */
+  --primary-900: hsl(222, 47%, 11%);      /* Deep Navy - Main brand */
+  --primary-800: hsl(222, 47%, 15%);
+  --primary-700: hsl(222, 47%, 20%);
+  --primary-600: hsl(222, 40%, 30%);
+  --primary-500: hsl(222, 35%, 40%);
+  --primary-400: hsl(222, 30%, 50%);
+  --primary-300: hsl(222, 35%, 65%);
+  --primary-200: hsl(222, 40%, 80%);
+  --primary-100: hsl(222, 45%, 92%);
+  --primary-50: hsl(222, 50%, 97%);
+  
+  /* Accent Gold - Premium & Success */
+  --gold-900: hsl(41, 100%, 35%);
+  --gold-800: hsl(41, 100%, 42%);
+  --gold-700: hsl(41, 100%, 48%);
+  --gold-600: hsl(41, 100%, 54%);         /* Main gold */
+  --gold-500: hsl(41, 100%, 60%);
+  --gold-400: hsl(41, 100%, 70%);
+  --gold-300: hsl(41, 100%, 80%);
+  --gold-200: hsl(41, 100%, 90%);
+  --gold-100: hsl(41, 100%, 95%);
+  
+  /* Accent Emerald - Growth & Success */
+  --emerald-900: hsl(152, 69%, 20%);
+  --emerald-800: hsl(152, 69%, 25%);
+  --emerald-700: hsl(152, 69%, 31%);      /* Main emerald */
+  --emerald-600: hsl(152, 65%, 40%);
+  --emerald-500: hsl(152, 60%, 50%);
+  --emerald-400: hsl(152, 55%, 60%);
+  --emerald-300: hsl(152, 50%, 75%);
+  --emerald-200: hsl(152, 45%, 85%);
+  --emerald-100: hsl(152, 40%, 95%);
+  
+  /* Neutrals - Balance & Sophistication */
+  --neutral-900: hsl(222, 20%, 10%);      /* Near black */
+  --neutral-800: hsl(222, 15%, 20%);
+  --neutral-700: hsl(222, 12%, 30%);
+  --neutral-600: hsl(222, 10%, 40%);
+  --neutral-500: hsl(222, 8%, 50%);
+  --neutral-400: hsl(222, 6%, 60%);
+  --neutral-300: hsl(222, 5%, 70%);
+  --neutral-200: hsl(222, 4%, 85%);
+  --neutral-100: hsl(222, 3%, 95%);
+  --neutral-50: hsl(0, 0%, 98%);
+  
+  /* Semantic Colors */
+  --text-primary: var(--neutral-900);
+  --text-secondary: var(--neutral-600);
+  --text-tertiary: var(--neutral-500);
+  --text-inverse: hsl(0, 0%, 100%);
+  
+  --bg-light: var(--neutral-50);
+  --bg-white: hsl(0, 0%, 100%);
+  --bg-dark: var(--primary-900);
+  
+  /* GRADIENTS - The Wow Factor */
+  --gradient-primary: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-700) 100%);
+  --gradient-primary-radial: radial-gradient(circle at top right, var(--primary-700), var(--primary-900));
+  
+  --gradient-gold: linear-gradient(135deg, var(--gold-700) 0%, var(--gold-500) 100%);
+  --gradient-gold-shine: linear-gradient(135deg, var(--gold-800) 0%, var(--gold-400) 50%, var(--gold-700) 100%);
+  
+  --gradient-emerald: linear-gradient(135deg, var(--emerald-700) 0%, var(--emerald-500) 100%);
+  
+  --gradient-sunset: linear-gradient(135deg, 
+    hsl(280, 70%, 40%) 0%, 
+    hsl(330, 85%, 50%) 50%, 
+    hsl(20, 90%, 60%) 100%
+  );
+  
+  --gradient-ocean: linear-gradient(135deg,
+    hsl(220, 70%, 35%) 0%,
+    hsl(200, 75%, 45%) 50%,
+    hsl(180, 80%, 55%) 100%
+  );
+  
+  --gradient-steel: linear-gradient(135deg,
+    var(--neutral-800) 0%,
+    var(--neutral-600) 50%,
+    var(--neutral-700) 100%
+  );
+  
+  /* Glassmorphism - Modern Premium Feel */
+  --glass-light: hsla(0, 0%, 100%, 0.15);
+  --glass-medium: hsla(0, 0%, 100%, 0.25);
+  --glass-strong: hsla(0, 0%, 100%, 0.35);
+  --glass-dark: hsla(222, 47%, 11%, 0.8);
+  
+  --glass-backdrop: blur(16px);
+  --glass-backdrop-strong: blur(24px);
+  
+  /* TYPOGRAPHY - Premium Fonts */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  
+  /* Fluid Typography - Scales Beautifully */
+  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --font-size-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --font-size-md: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);
+  --font-size-lg: clamp(1.5rem, 1.3rem + 1vw, 2.5rem);
+  --font-size-xl: clamp(2rem, 1.5rem + 2.5vw, 4rem);
+  --font-size-2xl: clamp(2.5rem, 2rem + 4vw, 5.5rem);
+  
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+  
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.8;
+  
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  
+  /* SPACING SYSTEM - Consistent Rhythm */
+  --space-xs: 0.5rem;      /* 8px */
+  --space-sm: 1rem;        /* 16px */
+  --space-md: 1.5rem;      /* 24px */
+  --space-lg: 2rem;        /* 32px */
+  --space-xl: 3rem;        /* 48px */
+  --space-2xl: 4rem;       /* 64px */
+  --space-3xl: 6rem;       /* 96px */
+  --space-4xl: 8rem;       /* 128px */
+  --space-5xl: 12rem;      /* 192px */
+  
+  /* Responsive Section Padding */
+  --section-padding-sm: clamp(3rem, 8vw, 5rem);
+  --section-padding-md: clamp(4rem, 10vw, 8rem);
+  --section-padding-lg: clamp(6rem, 12vw, 12rem);
+  
+  /* LAYOUT SYSTEM */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1400px;
+  --container-max: 1600px;
+  
+  --container-padding: clamp(1.5rem, 5vw, 3rem);
+  
+  /* SHADOWS - Depth & Elevation */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.20);
+  --shadow-2xl: 0 24px 64px rgba(0, 0, 0, 0.25);
+  
+  --shadow-gold: 0 8px 32px hsla(41, 100%, 54%, 0.35);
+  --shadow-primary: 0 8px 32px hsla(222, 47%, 11%, 0.25);
+  
+  /* Colored Glows for Premium Feel */
+  --glow-gold: 0 0 30px hsla(41, 100%, 54%, 0.4),
+               0 0 60px hsla(41, 100%, 54%, 0.2);
+  --glow-primary: 0 0 30px hsla(222, 47%, 50%, 0.4),
+                  0 0 60px hsla(222, 47%, 50%, 0.2);
+  
+  /* BORDERS & RADIUS */
+  --border-width-sm: 1px;
+  --border-width-md: 2px;
+  --border-width-lg: 4px;
+  
+  --border-radius-sm: 0.375rem;   /* 6px */
+  --border-radius-md: 0.5rem;     /* 8px */
+  --border-radius-lg: 0.75rem;    /* 12px */
+  --border-radius-xl: 1rem;       /* 16px */
+  --border-radius-2xl: 1.5rem;    /* 24px */
+  --border-radius-full: 9999px;
+  
+  /* TRANSITIONS - Smooth & Professional */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slower: 700ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Custom Easing Functions */
+  --ease-in-out-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-bounce: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  
+  /* Z-INDEX LAYERS */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+  
+  /* BREAKPOINTS (for reference in media queries) */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+/* ============================================
+   UTILITY CLASSES - Quick Building Blocks
+   ============================================ */
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-2xl);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container-sm { max-width: var(--container-sm); }
+.container-md { max-width: var(--container-md); }
+.container-lg { max-width: var(--container-lg); }
+.container-xl { max-width: var(--container-xl); }
+
+/* Section Spacing */
+.section {
+  padding-top: var(--section-padding-md);
+  padding-bottom: var(--section-padding-md);
+}
+
+.section-lg {
+  padding-top: var(--section-padding-lg);
+  padding-bottom: var(--section-padding-lg);
+}
+
+/* Text Utilities */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-inverse { color: var(--text-inverse); }
+.text-gold { color: var(--gold-600); }
+.text-emerald { color: var(--emerald-700); }
+
+/* Background Utilities */
+.bg-light { background-color: var(--bg-light); }
+.bg-white { background-color: var(--bg-white); }
+.bg-dark { background-color: var(--bg-dark); }
+.bg-primary { background: var(--gradient-primary); }
+.bg-gold { background: var(--gradient-gold); }
+
+/* Gradient Text - WOW Effect */
+.text-gradient {
+  background: var(--gradient-gold-shine);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.text-gradient-primary {
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-400));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: var(--glass-light);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border: 1px solid hsla(0, 0%, 100%, 0.2);
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.glass-card-strong {
+  background: var(--glass-strong);
+  backdrop-filter: var(--glass-backdrop-strong);
+  -webkit-backdrop-filter: var(--glass-backdrop-strong);
+  border: 1px solid hsla(0, 0%, 100%, 0.3);
+}
+
+.glass-dark {
+  background: var(--glass-dark);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border: 1px solid hsla(0, 0%, 100%, 0.15);
+  color: var(--text-inverse);
+}
+
+/* Hover Effects - Premium Interactions */
+.hover-lift {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-2xl);
+}
+
+.hover-glow-gold {
+  transition: box-shadow var(--transition-base);
+}
+
+.hover-glow-gold:hover {
+  box-shadow: var(--glow-gold);
+}
+
+.hover-scale {
+  transition: transform var(--transition-base);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-brightness {
+  transition: filter var(--transition-base);
+}
+
+.hover-brightness:hover {
+  filter: brightness(1.1);
+}
+
+/* Accent Borders */
+.accent-border-top {
+  border-top: 4px solid var(--gold-600);
+}
+
+.accent-border-left {
+  border-left: 4px solid var(--gold-600);
+}
+
+.accent-border-gradient {
+  position: relative;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.accent-border-gradient::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: var(--gradient-gold);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* Grid Utilities */
+.grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Flex Utilities */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-sm { gap: var(--space-sm); }
+.gap-md { gap: var(--space-md); }
+.gap-lg { gap: var(--space-lg); }
+
+/* Visibility */
+.hidden { display: none; }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 1.5rem;
+  }
+  
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .mobile-hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .desktop-hidden {
+    display: none;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY ENHANCEMENTS
+   ============================================ */
+
+/* Focus Styles - Beautiful & Accessible */
+:focus-visible {
+  outline: 3px solid var(--gold-600);
+  outline-offset: 3px;
+  border-radius: var(--border-radius-sm);
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--gold-600);
+  outline-offset: 3px;
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --text-primary: hsl(0, 0%, 0%);
+    --text-secondary: hsl(0, 0%, 20%);
+    --border-width-md: 3px;
+  }
+}
+
+/* Dark Mode Support (Future Enhancement) */
+@media (prefers-color-scheme: dark) {
+  /* Ready for dark mode implementation */
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+  }
+}
+
+/* ============================================
+   GOOGLE FONTS IMPORT
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700;900&display=swap');
